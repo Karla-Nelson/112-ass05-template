@@ -202,7 +202,6 @@ double heron(double x, double epsilon)
     // TODO: Your implementation here     
 
     int rt = 1;
-    int i = 0;
     double guess = x / 2;
     double guess2 = (guess + (x / guess)) / 2;
 
