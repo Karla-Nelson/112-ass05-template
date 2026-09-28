@@ -1,4 +1,4 @@
-//char *AUTHOR_NAME        = (char *) "Your Name";
+//char *AUTHOR_NAME        = (char *) "Karla Nelson";
 //char *AUTHOR_AUTHORSHIP  = (char *) "I acknowledge that I have worked on this
 // assignment independently, except where explicitly noted and referenced.
 // Any collaboration or use of external resources has been properly cited.
@@ -16,7 +16,8 @@
  * 
  * Write your function implementations below each TODO.
  */
-
+#include "code.h"
+#include <stdio.h>
 
 
 /*
@@ -30,6 +31,25 @@
 int find_max(int arr[], int n)
 {
     // TODO: Your implementation here
+    
+    int i = 0;
+    int rslt = arr[i];
+
+    for(i; i <= n; i++)
+    {
+        if(rslt < arr[i])
+        {
+            rslt = arr[i];
+        }
+
+        if((i + 1) == n)
+        {
+            return rslt;
+        }
+    }
+
+    
+
 }
 
 /*
@@ -43,6 +63,22 @@ int find_max(int arr[], int n)
 int find_min(int arr[], int n)
 {
     // TODO: Your implementation here
+
+    int i = 0;
+    int rslt = arr[i];
+
+    for(i; i <= n; i++)
+    {
+        if(rslt > arr[i])
+        {
+            rslt = arr[i];
+        }
+
+        if((i + 1) == n)
+        {
+            return rslt;
+        }
+    }
 }
 
 /*
@@ -56,6 +92,22 @@ int find_min(int arr[], int n)
 long sum_array(int arr[], int n)
 {
     // TODO: Your implementation here
+
+    int i = 0;
+    long rslt = 0;
+
+    for(i; i <= n; i++)
+    {
+        if((i) == n)
+        {
+            return rslt;
+        }
+
+        else
+        {
+            rslt = rslt + arr[i];
+        }
+    }
 }
 
 /*
@@ -69,6 +121,23 @@ long sum_array(int arr[], int n)
 double average(float arr[], int n)
 {
     // TODO: Your implementation here
+
+    int i = 0;
+    double rslt = 0;
+
+    for(i; i <= n; i++)
+    {
+        if((i) == n)
+        {
+            rslt = rslt / n;
+            return rslt;
+        }
+
+        else
+        {
+            rslt = rslt + arr[i];
+        }
+    }
 }
 
 /*
@@ -89,6 +158,29 @@ double average(float arr[], int n)
 int linear_search(int arr[], int n, int target)
 {
     // TODO: Your implementation here
+
+    int rt = 1;
+    int i = 0;
+    int rslt = 0;
+
+    while(rt == 1)
+    {
+        if(arr[i] != target && i <= n)
+        {
+            i++;
+        }
+
+        if(arr[i] == target)
+        {
+            return i;
+        }
+
+        if(i > n)
+        {
+            return -1;
+        }
+    }
+    
 }
 
 
@@ -108,4 +200,26 @@ int linear_search(int arr[], int n, int target)
 double heron(double x, double epsilon)
 {
     // TODO: Your implementation here
+
+    int rt = 1;
+    int i = 0;
+    double guess = x / 2;
+    double guess2 = (guess + (x / guess)) / 2;
+
+    while(rt == 1)
+    {
+        if((guess - guess2) > epsilon)
+        {
+            guess = guess2;
+            guess2 = (guess2 + (x / guess2)) / 2;
+
+        }
+
+        if((guess - guess2) < epsilon)
+        {
+            return guess2;
+            
+        }
+    }
+
 }
